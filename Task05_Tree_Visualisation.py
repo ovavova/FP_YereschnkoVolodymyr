@@ -23,7 +23,7 @@ def rgb_to_hex(rgb):
     return f"#{r:02X}{g:02X}{b:02X}"
 
 
-def gradient_colors(n: int, start_hex="#0B1A33", end_hex="#BFE6FF"):
+def gradient_colors(n: int, start_hex="#072086", end_hex="#91E3EE"):
     if n <= 0:
         return []
     if n == 1:
@@ -45,7 +45,7 @@ def gradient_colors(n: int, start_hex="#0B1A33", end_hex="#BFE6FF"):
 def iter_dfs_preorder(root):
     if root is None:
         return
-    stack = [root]
+    stack = [root] # використовуємо стек, а не рекурсію
     while stack:
         node = stack.pop()
         yield node
@@ -58,7 +58,7 @@ def iter_dfs_preorder(root):
 def iter_bfs(root):
     if root is None:
         return
-    q = deque([root])
+    q = deque([root]) # використовуємо чергу - не рекурсію 
     while q:
         node = q.popleft()
         yield node
@@ -84,10 +84,10 @@ def draw_tree_step(root, ax, title=""):
 def visualize_traversal(
     root,
     traversal="dfs",          # "dfs" або "bfs"
-    delay=0.8,                # пауза між кроками
-    unvisited="#D3D3D3",      # колір невідвіданих
-    start="#0B1A33",          # темний старт
-    end="#BFE6FF",            # світлий фініш
+    delay=0.3,                # пауза між кроками
+    unvisited="#64BED9",      # колір невідвіданих
+    start="#72097E",          # темний старт
+    end="#C2AEC2",            # світлий фініш
 ):
     if root is None:
         print("Дерево порожнє.")
