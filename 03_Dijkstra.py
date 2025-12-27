@@ -1,3 +1,6 @@
+""" Розробіть алгоритм Дейкстри для знаходження найкоротших шляхів у зваженому графі, використовуючи бінарну купу. Завдання включає створення графа, використання піраміди для оптимізації вибору вершин та обчислення найкоротших шляхів від початкової вершини до всіх інших. """
+
+
 import networkx as nx
 import matplotlib.pyplot as plt
 import heapq  # ✅ додали для бінарної купи
@@ -110,7 +113,7 @@ def analyze_station(graph, station_name):
     else:
         return -1
 
-# ✅ Дейкстра через бінарну купу (heapq)
+#  Дейкстра через бінарну купу (heapq)
 def dijkstra_heap(graph, start_node: str):
     """
     Повертає:
@@ -141,7 +144,7 @@ def dijkstra_heap(graph, start_node: str):
 
     return dist, prev
 
-# ✅ Відновлення шляху (опційно, але корисно для демонстрації)
+# Відновлення шляху 
 def build_path(prev: dict, start: str, target: str):
     if start == target:
         return [start]
